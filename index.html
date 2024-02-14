@@ -9,10 +9,9 @@
 </head>
 <style>
     body{
-        background-image: url("pexels-codioful-\(formerly-gradienta\)-6985265.jpg");
+        background-image: url("pexels-oleksandr-p-2831794.jpg");
         background-size: cover;
         background-position: center;
-        height: 100vh;
         color: aliceblue;
     }
 </style>
@@ -28,7 +27,7 @@
     </div>
  <div class="mx-auto shadow-sm col-10 col-lg-5 text-center">
      <input class=" col-10 col-lg-5" id="textOne" style="border:none; background-color: transparent;"/>
-     <button type="button" onclick="copyClipOne()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables." style="border:none; background-color:transparent;"><i class="bi bi-copy" ></i></button>
+     <button type="button" onclick="copyClipOne()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables." style="border:none; background-color:transparent;color: #fff;"><i class="bi bi-copy" ></i></button>
 
      </div>
   
@@ -41,7 +40,7 @@
     </div>
     <div class="mx-auto shadow-sm col-10 col-lg-5 text-center">
         <input class=" col-10 col-lg-5" id="textTwo" style="border:none; background-color: transparent;"/>
-        <button type="button" onclick="copyClipTwo()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables." style="border:none; background-color:transparent;"><i class="bi bi-copy" ></i></button>
+        <button type="button" onclick="copyClipTwo()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables." style="border:none; background-color:transparent; color: #fff;"><i class="bi bi-copy" ></i></button>
    
         </div>
  </div> 
@@ -52,7 +51,7 @@
     </div>
     <div class="mx-auto shadow-sm col-10 col-lg-5 text-center">
         <input class=" col-10 col-lg-5" id="textThree" style="border:none; background-color: transparent;"/>
-        <button type="button" onclick="copyClipThree()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables." style="border:none; background-color:transparent;"><i class="bi bi-copy" ></i></button>
+        <button type="button" onclick="copyClipThree()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables." style="border:none; background-color:transparent;color: #fff;"><i class="bi bi-copy" ></i></button>
    
         </div>
  </div> 
@@ -67,12 +66,14 @@ colorChange.addEventListener('click', (e) =>{
 
 let colOne = colorOne.style.backgroundColor = rgbToHex`rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)} )`
     textOne.value = `${colOne}`
-
+    textOne.style = '#fff' 
   let colTwo =  colorTwo.style.backgroundColor =rgbToHex`rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)} )`
   textTwo.value = `${colTwo}`;
+  textTwo.style = '#fff' 
 
   let colThree =  colorThree.style.backgroundColor = rgbToHex`rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)} )`
     textThree.value = `${colThree}`
+    textThree.style = '#fff'
 })
 const copyClipOne = () => {
     let copyTextOne = document.getElementById('textOne');
