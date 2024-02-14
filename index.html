@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Color</title>
+</head>
+<body>
+    <h1 class="text-center fw-bold">My Color</h1>
+    <div class="d-flex gap-2 mx-auto text-center justify-content-center mt-3">
+        <button class="btn btn-primary">My pallet</button>
+        <button class="btn btn-primary" id="gen">Generate</button>
+    </div>
+<div class="mx-auto shadow-sm col-10 col-lg-5 my-3 ">
+    <div class="" id="colorOne" style="height: 250px;">
+      <h1 class="text-center mt-7 text-light" style="position: relative;top: 100px;">My color</h1>
+    </div>
+ <div class="mx-auto shadow-sm col-10 col-lg-5 text-center">
+     <input class=" col-10 col-lg-5" id="textOne" style="border:none; background-color: transparent;"/>
+     <button type="button" onclick="copyClipOne()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables." style="border:none; background-color:transparent;"><i class="bi bi-copy" ></i></button>
+
+     </div>
+  
+
+ </div>   
+    
+ <div class="mx-auto shadow-sm col-10 col-lg-5 my-3 ">
+    <div class="" id="colorTwo" style="height: 250px;">
+        <h1 class="text-center mt-7 text-light" style="position: relative;top: 100px;">My color</h1>
+    </div>
+    <div class="mx-auto shadow-sm col-10 col-lg-5 text-center">
+        <input class=" col-10 col-lg-5" id="textTwo" style="border:none; background-color: transparent;"/>
+        <button type="button" onclick="copyClipTwo()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables." style="border:none; background-color:transparent;"><i class="bi bi-copy" ></i></button>
+   
+        </div>
+ </div> 
+
+ <div class="mx-auto shadow-sm col-10 col-lg-5 my-3 ">
+    <div class="" id="colorThree" style="height: 250px;">
+        <h1 class="text-center mt-7 text-light" style="position: relative;top: 100px;">My color</h1>
+    </div>
+    <div class="mx-auto shadow-sm col-10 col-lg-5 text-center">
+        <input class=" col-10 col-lg-5" id="textThree" style="border:none; background-color: transparent;"/>
+        <button type="button" onclick="copyClipThree()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables." style="border:none; background-color:transparent;"><i class="bi bi-copy" ></i></button>
+   
+        </div>
+ </div> 
+
+ <script>
+
+    const colorChange = document.getElementById('gen')
+colorChange.addEventListener('click', (e) =>{
+    const rgbToHex = (r,g,b) => {
+ return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+let colOne = colorOne.style.backgroundColor = rgbToHex`rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)} )`
+    textOne.value = `${colOne}`
+
+  let colTwo =  colorTwo.style.backgroundColor =rgbToHex`rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)} )`
+  textTwo.value = `${colTwo}`;
+
+  let colThree =  colorThree.style.backgroundColor = rgbToHex`rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)} )`
+    textThree.value = `${colThree}`
+})
+const copyClipOne = () => {
+    let copyTextOne = document.getElementById('textOne');
+
+    copyTextOne.select();
+    copyTextOne.setSelectionRange(0,99999);
+   navigator.clipboard.writeText(copyTextOne.value)
+}
+const copyClipTwo = () => {
+    let copyTextTwo = document.getElementById('textTwo');
+
+    copyTextTwo.select();
+    copyTextTwo.setSelectionRange(0,99999);
+   navigator.clipboard.writeText(copyTextTwo.value)
+
+}
+const copyClipThree = () => {
+    let copyTextThree = document.getElementById('textThree');
+
+    copyTextThree.select();
+    copyTextThree.setSelectionRange(0,99999);
+   navigator.clipboard.writeText(copyTextThree.value)
+}
+ </script>
+</body>
+</html>
